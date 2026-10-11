@@ -13,7 +13,7 @@ function createApp() {
 
   app.use('/items', itemRoutes(store));
 
-  app.del('/items/:id', (req, res) => {
+  app.delete('/items/:id', (req, res) => {
     if (!store.remove(req.params.id)) return res.status(404).json({ error: 'Not found' });
     res.status(204).end();
   });
